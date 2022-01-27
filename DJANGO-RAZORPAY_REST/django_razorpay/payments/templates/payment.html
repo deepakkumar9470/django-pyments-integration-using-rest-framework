@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <title>Django Razorpay</title>
+
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: #3d49f5;
+            font-family: Roboto, Arial, sans-serif;
+            justify-content: center;
+        }
+        .container{
+            width: 400px;
+            height: 400px;
+            display: flex;
+            background: rgb(243, 239, 239);
+            padding: 20px;
+            border-radius: 3px;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            
+            box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 7px -1px rgba(0,0,0,0.75);
+        }
+        .container h2{
+            font-size: 20px;
+            color: blue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            line-height: 2;
+            margin-bottom: 15px;
+        }
+    
+    </style>
+</head>
+<body>
+
+    {% if response %}
+              <div class="container">
+                  <h2>Razorpay Payment</h2>
+
+                  <form action="{% url 'success' %}" method="post">
+                    {% csrf_token %}
+                   <script
+                   src="https://checkout.razorpay.com/v1/checkout.js"
+                   data-key="rzp_test_ELS2nNohptHhzg"
+                   data-amount={{response.amount}}
+                   data-currency={{response.currency}}
+                   data-order_id={{response.id}}
+                   data-buttontext="Pay with Razorpay"
+                   data-name="Django Razorpay Integration in Test Mode"
+                   data-description=""
+                   data-image="https://d6xcmfyh68wv8.cloudfront.net/assets/razorpay-glyph.svg"
+                   data-theme.color="#3d49f5"
+               ></script>
+               <input type="hidden" custom="Hidden Element" name="hidden">
+   
+                </form>
+                
+              </div>
+        {% endif %}
+         
+    
+</body>
+</html>

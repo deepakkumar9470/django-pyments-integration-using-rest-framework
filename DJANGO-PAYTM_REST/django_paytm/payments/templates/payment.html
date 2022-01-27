@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+    <title>Django Paytm</title>
+</head>
+<body>
+
+       <div class="form_container">
+        <h1>Django Paytm</h1>
+         {% if response.STATUS == "TXN_SUCCESS" %}
+          <h1>Transaction successfully proceed</h1>
+          {% else %}
+          <h1>Oops Transaction Failed</h1>
+          {% endif %}
+          <a href="http://localhost:3000"><button>Go Home</button></a>
+       </div>
+    
+</body>
+</html>

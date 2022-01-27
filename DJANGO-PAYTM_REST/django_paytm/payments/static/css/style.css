@@ -1,0 +1,62 @@
+*{margin: 0;padding: 0;box-sizing: border-box;}
+
+body{
+    /* background: #341f97; */
+    background-image: url('https://gumlet.assettype.com/freepressjournal/2020-12/c39789cf-0238-404e-ad7b-60e6d46d93be/8C1A071D_10C3_4DAD_BE89_8C36F694055A.jpeg?format=webp&w=400&dpr=2.6');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Roboto, sans-serif;
+}
+
+
+.form_container h1{
+    font-size: 25px;
+    margin-bottom: 10px;
+    color: #2b8cec;
+    
+}
+
+.form_container{
+    width: 500px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background: #f0f1f3;
+    border-radius: 5px;
+    justify-content: center;
+    flex-direction: column;
+    box-shadow: 0px -1px 5px -2px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px -1px 5px -2px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px -1px 5px -2px rgba(0,0,0,0.75);
+}
+
+.form_container input{
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 15px;
+    border-radius: 3px;
+    margin-bottom: 10px;
+    color: darkslategrey;
+}
+
+
+button{
+    width: 100%;
+    background: #222f3e;
+    color: #fff;
+    font-size: 20px;
+    border: none;
+    border-radius: 4px;
+    padding: 15px;
+    cursor: pointer;
+}
+
+button:hover{
+    background: #1c2835;
+}
